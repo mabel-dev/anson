@@ -12,7 +12,7 @@ try:
     with open("requirements.txt", "r") as f:
         required = f.read().splitlines()
 except:
-    with open("mabel.egg-info/requires.txt", "r") as f:
+    with open("anson.egg-info/requires.txt", "r") as f:
         required = f.read().splitlines()
 
 setup(
