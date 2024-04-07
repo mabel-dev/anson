@@ -16,6 +16,18 @@ For the purposes of this document, the below are assumed to be true:
 
 - The solution will be cloud-hosted
 
+### Requirements
+
+- Unified access plane for platform data
+- Fast searches
+- Durable Data
+- Auditable Data
+- Protected Data
+- Cost Effective
+- Easy to Use
+- Maintainable
+- Dynamic and Adaptive
+
 ## Problem Space
 
 - Terabytes of data will be stored
@@ -122,6 +134,8 @@ The DQL will be SQL, some DQL and DML may need to be down using non-SQL commands
 
 It is expected this service will run in Kubernetes or some other long-running environment with access to local storage.
 
+The Data Presentation Layer should support accessing datasets in other storage platforms (Splunk, BigQuery, Postgres, etc) as required as well.
+
 ### [NEW] Processes
 
 To ensure read performance is efficient, regular compaction of SSTables will take place and an MVVC approach will be used to ensure reads are not interrupted during compaction. 
@@ -164,7 +178,45 @@ Two dimensions of permissions should be defined:
 
 ## Requirement Mapping
 
+**Unified access plane for platform data**
 
+This is the core topic of this designed
+
+**Fast searches**
+
+Hot data caching
+Parallel processable data
+Indexed data, including a faux full-text index
+
+**Durable Data**
+
+Multi-region GCS
+
+**Auditable Data**
+
+Git-Like semantics for changes
+
+**Protected Data**
+
+Access controls around entitlements (CUD)
+Access controls around visibility (R)
+
+**Cost Effective**
+
+Compression
+Only paying Storage and Compute primitive costs
+
+**Easy to Use**
+
+Core user interface is SQL - low-code
+
+**Maintainable**
+
+In control of all parts
+
+**Dynamic and Adaptive**
+
+In control of all parts, can evolve as we need, not as others want
 
 ## Other Options
 
@@ -180,5 +232,11 @@ It is likely engineers on the platform will have some access to all data.
 Building own permissions model is hard.
 
 ## Cost Considerations
+
+## Integration with Other Initiatives
+
+- Insights platform via ODBC
+- Workbench via HTTP API
+- Pipelines via HTTP API
 
 ## Suggested Roadmap
