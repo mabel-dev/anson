@@ -40,6 +40,10 @@ For the purposes of this document, the below are assumed to be true:
 - Data must have dataset access restrictions
 - Data is of varying data types
 
+## Prior Art
+
+This design is evolutionary leap on the current design of the underlying VAP storage. This design addresses some of the challenges and includes some of the key learnings from operating that platform for four years.
+
 ## Solution Overview
 
 Container-based solution
@@ -233,10 +237,19 @@ Building own permissions model is hard.
 
 ## Cost Considerations
 
+
+
 ## Integration with Other Initiatives
 
 - Insights platform via ODBC
 - Workbench via HTTP API
 - Pipelines via HTTP API
 
-## Suggested Roadmap
+## Suggested Delivery
+
+Step | Step
+---- | ----
+1    | Agree file format
+2.1  | Create file reader/writer
+2.2  | Create HTTP Data Presentation Layer
+2.3  | Create Permissions Model
