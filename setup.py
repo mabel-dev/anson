@@ -1,5 +1,4 @@
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import find_packages, setup
 
 with open("anson/version.py", "r") as v:
     vers = v.read()
