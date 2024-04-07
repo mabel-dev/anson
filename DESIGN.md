@@ -42,7 +42,9 @@ For the purposes of this document, the below are assumed to be true:
 
 ## Prior Art
 
-This design is evolutionary leap on the current design of the underlying VAP storage. This design addresses some of the challenges and includes some of the key learnings from operating that platform for four years.
+This design is evolutionary leap on the current design of the underlying VA storage. This design addresses some of the challenges and includes some of the key learnings from operating that platform for four years.
+
+Significant new functions are the Git-Like semantics which will retain data immutability with the capability to perform atomic updates - this has no current implementation, and creation of a file format designed for long-term storage; this is building on existing short-term storage development for in-memory storage and work done to emulate Firestore on GCS.
 
 ## Solution Overview
 
